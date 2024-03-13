@@ -20,3 +20,21 @@ router.get("/jojo", (_req, res) => {
     ]);
 });
 
+//router params 
+router.get("/user/:id/:nick/:attack", ( req, res ) => {
+    const { id, nick, attack } = req.params;
+    res.send({ id, nick, attack });
+});
+
+//query params
+router.get("/user/rpg", ( req, res ) => {
+    const { id, nick, attack } = req.query;
+    res.send({ id, nick, attack });
+});
+
+//body params
+router.post("/user/rpg", (req, res) => {
+    const { id, nick, attack } = req.body;
+    console.log({ id, nick, attack });
+    res.send({ status: "Personagem Criado" });
+});
