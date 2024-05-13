@@ -59,7 +59,7 @@ export const userControllers = {
         throw res.status(401).json({ message: "Invalid password!" });
 
       if (password == newPassword)
-        throw res.status(401).json({ message: "Alterar senha egual" });
+        throw res.status(401).json({ message: "Alterar senha igual" });
 
       const userEmail = await db.get("SELECT * FROM users WHERE email = ?", [
         email,
